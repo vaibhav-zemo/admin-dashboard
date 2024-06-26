@@ -7,12 +7,17 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [securityKey, setSecurityKey] = useState("");
   const navigate = useNavigate();
 
   const handleLogIn = async () => {
     try {
       if (password !== confirmPassword) {
         alert("Passwords do not match");
+        return;
+      }
+      if(securityKey !== "cakelaya@2k24"){
+        alert("Invalid Security Key");
         return;
       }
       const res = await axiosInstanceWithoutToken.post("admin/signup", {
@@ -82,6 +87,12 @@ const SignUp = () => {
               placeholder="Confirm Password"
               type="password"
               onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+            <Input
+              borderRadius={"10px"}
+              placeholder="Security Key"
+              type="password"
+              onChange={(e) => setSecurityKey(e.target.value)}
             />
           </VStack>
           <Button

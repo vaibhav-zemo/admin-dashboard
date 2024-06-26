@@ -11,7 +11,8 @@ const theme = extendTheme({
         pippin: '#FFE0E0',
         concrete: '#F3F3F3',
         mercury: '#E9E9E9',
-        dodgerBlue: '#367AFF'
+        dodgerBlue: '#367AFF',
+        gunPowder: '#464255'
     },
     fonts: {
         heading: 'Poppins',
